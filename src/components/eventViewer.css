@@ -1,0 +1,18 @@
+.event-viewer {
+    color: rgb(0, 0, 0);
+}
+
+.event-viewer .filters {
+    padding-top: 1.5em;
+    justify-content: center;
+    height: 4em;
+}
+
+.error-msg {
+    display: block;
+    height: 3em;
+    text-align: center;
+    padding: .5em;
+    color: #fff;
+    background-color: rgba(255, 71, 71, 0.5);
+}

@@ -1,7 +1,7 @@
-import './App.css';
 import NavComponent from './components/nav';
 import FooterComponent from './components/footer';
 import EventViewerComponent from './components/eventViewer';
+import 'bootstrap/dist/css/bootstrap.css';
 
 function App() {
   return (
