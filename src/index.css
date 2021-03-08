@@ -1,13 +1,44 @@
+/* Imported Styles from NFHS Network */
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  background: rgb(9, 18, 26);
+  font-family: Montserrat, sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body a,
+body blockquote,
+body code,
+body dd,
+body div,
+body dl,
+body dt,
+body em,
+body fieldset,
+body font,
+body form,
+body h1,
+body h2,
+body h3,
+body h4,
+body h5,
+body h6,
+body img,
+body input,
+body ins,
+body kbd,
+body label,
+body li,
+body object,
+body ol,
+body p,
+body pre,
+body q,
+body s,
+body samp,
+body small,
+body span,
+body strong,
+body ul {
+  font-family: Montserrat;
 }

@@ -1,0 +1,23 @@
+.title>h2 {
+    font-size: 2.0em;
+}
+
+@media only screen and (height < 600px) {
+    .title>h2 {
+        font-size: 1.3em;
+    }
+}
+
+nav {
+    height: 100px;
+    display: block;
+    background-image: linear-gradient(rgb(7, 38, 65), rgb(0, 28, 53));
+    color: rgb(255, 255, 255);
+    align-items: center;
+}
+
+.logo img {
+    height: 50px;
+    width: 50px;
+    float: right;
+}
