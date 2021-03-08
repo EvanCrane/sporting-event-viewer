@@ -1,3 +1,9 @@
+## Sporting Event Viewer
+Libraries used: 
+-- React (Create-React-App)
+-- Bootstrap
+-- Moment
+
 ## Available Scripts
 
 In the project directory, you can run:
