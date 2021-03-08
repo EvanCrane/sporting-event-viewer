@@ -21,8 +21,8 @@ export default class EventViewerComponent extends Component {
                 start: '',
                 end: ''
             },
-            // Default to 50 like in the requirements doc
-            currentSize: 50,
+            // Setting to 25 for usability purposes
+            currentSize: 25,
             error: '',
             updateTable: false
         }
