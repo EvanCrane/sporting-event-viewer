@@ -3,12 +3,13 @@
 }
 
 .event-viewer .filters {
-    padding-top: 1.5em;
+    padding-top: 1.25em;
+    padding-bottom: 1.25em;
     justify-content: center;
-    height: 4em;
 }
 
 .error-msg {
+    width: 105vw;
     display: block;
     height: 3em;
     text-align: center;

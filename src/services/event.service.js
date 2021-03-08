@@ -1,4 +1,7 @@
 
+/**
+ * Class for methods related to getting and sorting data for upcoming events
+ */
 export default class EventService {
     /**
      * Call API endpoint for upcoming event data and returns relevant event data
@@ -8,12 +11,16 @@ export default class EventService {
      * @param {*} size 
      * @returns Promise resolving to [] or null
      */
-    async fetchEventData(stateAssocKey, dateFrom, dateTo, size) {
+    async fetchEventData(stateAssocKey, dateFrom, dateTo, size, eventList) {
         // In case a dev later tried to pass nulls
         stateAssocKey = stateAssocKey ? stateAssocKey : '';
         dateFrom = dateFrom ? dateFrom : '';
         dateTo = dateTo ? dateTo : '';
         size = size !== null || undefined ? size : '';
+        // Case where an invalid date is passed and returns 500 just return the last event list
+        if(dateFrom === 'Invalid date' || dateTo === 'Invalid date') {
+            return eventList;
+        }
 
         try {
             let baseUrl = 'https://challenge.nfhsnetwork.com/v2/search/events/upcoming';
