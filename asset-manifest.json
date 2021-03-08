@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/sporting-event-viewer/static/css/main.b23efaf1.chunk.css",
-    "main.js": "/sporting-event-viewer/static/js/main.b72b0801.chunk.js",
-    "main.js.map": "/sporting-event-viewer/static/js/main.b72b0801.chunk.js.map",
+    "main.js": "/sporting-event-viewer/static/js/main.6895ed92.chunk.js",
+    "main.js.map": "/sporting-event-viewer/static/js/main.6895ed92.chunk.js.map",
     "runtime-main.js": "/sporting-event-viewer/static/js/runtime-main.ff442ffc.js",
     "runtime-main.js.map": "/sporting-event-viewer/static/js/runtime-main.ff442ffc.js.map",
     "static/css/2.2295ac45.chunk.css": "/sporting-event-viewer/static/css/2.2295ac45.chunk.css",
@@ -20,6 +20,6 @@
     "static/css/2.2295ac45.chunk.css",
     "static/js/2.6d4ca273.chunk.js",
     "static/css/main.b23efaf1.chunk.css",
-    "static/js/main.b72b0801.chunk.js"
+    "static/js/main.6895ed92.chunk.js"
   ]
 }
