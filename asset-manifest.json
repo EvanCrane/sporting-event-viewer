@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/sporting-event-viewer/static/css/main.b23efaf1.chunk.css",
+    "main.js": "/sporting-event-viewer/static/js/main.b72b0801.chunk.js",
+    "main.js.map": "/sporting-event-viewer/static/js/main.b72b0801.chunk.js.map",
+    "runtime-main.js": "/sporting-event-viewer/static/js/runtime-main.ff442ffc.js",
+    "runtime-main.js.map": "/sporting-event-viewer/static/js/runtime-main.ff442ffc.js.map",
+    "static/css/2.2295ac45.chunk.css": "/sporting-event-viewer/static/css/2.2295ac45.chunk.css",
+    "static/js/2.6d4ca273.chunk.js": "/sporting-event-viewer/static/js/2.6d4ca273.chunk.js",
+    "static/js/2.6d4ca273.chunk.js.map": "/sporting-event-viewer/static/js/2.6d4ca273.chunk.js.map",
+    "static/js/3.3479099b.chunk.js": "/sporting-event-viewer/static/js/3.3479099b.chunk.js",
+    "static/js/3.3479099b.chunk.js.map": "/sporting-event-viewer/static/js/3.3479099b.chunk.js.map",
+    "index.html": "/sporting-event-viewer/index.html",
+    "static/css/2.2295ac45.chunk.css.map": "/sporting-event-viewer/static/css/2.2295ac45.chunk.css.map",
+    "static/css/main.b23efaf1.chunk.css.map": "/sporting-event-viewer/static/css/main.b23efaf1.chunk.css.map",
+    "static/js/2.6d4ca273.chunk.js.LICENSE.txt": "/sporting-event-viewer/static/js/2.6d4ca273.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ff442ffc.js",
+    "static/css/2.2295ac45.chunk.css",
+    "static/js/2.6d4ca273.chunk.js",
+    "static/css/main.b23efaf1.chunk.css",
+    "static/js/main.b72b0801.chunk.js"
+  ]
+}
