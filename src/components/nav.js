@@ -7,7 +7,7 @@ import './nav.css';
 const NavComponent = () => {
     return (
         <nav className="row">
-            <div className="col-4 col-lg-5 logo">
+            <div className="col-4 col-lg-4 col-xl-5 logo">
                 <img src={logo} alt="Stock Shield"></img>
             </div>
             <div className="col title">
