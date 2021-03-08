@@ -4,6 +4,8 @@ Libraries used:
 -- Bootstrap
 -- Moment
 
+In order to run this site locally you must first run npm install and then npm start. 
+
 ## Available Scripts
 
 In the project directory, you can run:
