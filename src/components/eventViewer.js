@@ -66,7 +66,7 @@ export default class EventViewerComponent extends Component {
      */
     updateStartDate = async (date) => {
         date = moment(date).utc().format();
-        this.setState({ currentDateRange: { start: date }, updateTable: true });
+        this.setState(prevState => ({ currentDateRange: { ...prevState.currentDateRange, start: date,  }, updateTable: true }));
     }
 
     /**
@@ -75,7 +75,7 @@ export default class EventViewerComponent extends Component {
      */
     updateEndDate = async (date) => {
         date = moment(date).utc().format();
-        this.setState({ currentDateRange: { end: date }, updateTable: true });
+        this.setState(prevState => ({ currentDateRange: { ...prevState.currentDateRange, end: date }, updateTable: true }));
     }
 
     render() {
