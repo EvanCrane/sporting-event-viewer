@@ -7,6 +7,7 @@ export default class EventViewerComponent extends Component {
         super();
         this.eventService = new EventService();
         this.state = {
+            currentAssocKey: '',
             eventList: [],
             dropdownOptions: {
                 '18bad24aaa': 'GHSA',
@@ -16,8 +17,9 @@ export default class EventViewerComponent extends Component {
                 start: '',
                 end: ''
             },
-            currentDropdownSelection: '',
-            error: ''
+            currentSize: 50,
+            error: '',
+            updateTable: false
         }
     }
 
@@ -25,21 +27,43 @@ export default class EventViewerComponent extends Component {
         this.getEvents();
     }
 
-    async getEvents() {
-        const events = await this.eventService.fetchEventData('', '', '', '');
-        if (!events) {
-            this.setState({ eventList: [], error: 'Could not retrieve upcoming event data.' });
-        } else {
-            this.setState({ eventList: events, error: '' });
+    componentDidUpdate() {
+        if (this.state.updateTable) {
+            this.getEvents();
         }
+    }
+
+    getEvents = async () => {
+        const { currentAssocKey, currentDateRange, currentSize } = this.state;
+        const events =
+            await this.eventService.fetchEventData(currentAssocKey, currentDateRange.start, currentDateRange.end, currentSize);
+        if (!events) {
+            this.setState({ eventList: [], error: 'Could not retrieve upcoming event data.', updateTable: false });
+        } else {
+            this.setState({ eventList: events, error: '', updateTable: false });
+        }
+    }
+
+    updateAssoc = async (value) => {
+        this.setState({ currentAssocKey: value, updateTable: true });
+    }
+
+    updateStartDate = async (date) => {
+        date = moment(date).utc().format();
+        this.setState({ currentDateRange: { start: date }, updateTable: true });
+    }
+
+    updateEndDate = async (date) => {
+        date = moment(date).utc().format();
+        this.setState({ currentDateRange: { end: date }, updateTable: true });
     }
 
     render() {
         return (
             <section className='event-viewer'>
                 <div className='filters'>
-                    <AssocDropdown {...this.state} />
-                    <DatePicker {...this.state} />
+                    <AssocDropdown updateAssoc={this.updateAssoc} {...this.state} />
+                    <DatePicker updateStartDate={this.updateStartDate} updateEndDate={this.updateEndDate} {...this.state} />
                 </div>
                 <Table {...this.state} />
             </section>
@@ -51,18 +75,18 @@ const AssocDropdown = (props) => {
     const selectOptions = (options) => {
         return Object.entries(options).map((entry) => {
             return (
-                <option value={entry[0]}>{entry[1]}</option>
+                <option key={entry} value={entry[0]}>{entry[1]}</option>
             );
         });
-
     };
 
+    const handleChange = (e) => { props.updateAssoc(e.target.value) };
 
     return (
         <>
-            <label for="assocDropdown"></label>
-            <select name="assocDropdown" id="assocDropdown">
-                <option value=''>Select an Association</option>
+            <label htmlFor="assocDropdown"></label>
+            <select onChange={handleChange} name="assocDropdown" id="assocDropdown">
+                <option key='' value=''>Select an Association</option>
                 {selectOptions(props.dropdownOptions)}
             </select>
         </>
@@ -70,10 +94,12 @@ const AssocDropdown = (props) => {
 };
 
 const DatePicker = (props) => {
+    const onStartChange = (e) => { props.updateStartDate(e.target.value) };
+    const onEndChange = (e) => { props.updateEndDate(e.target.value) };
     return (
         <div className='date-picker'>
-            <input id='start-time' type="date"></input>
-            <input id='end-time' type="date"></input>
+            <input onChange={onStartChange} id='start-time' type="date"></input>
+            <input onChange={onEndChange} id='end-time' type="date"></input>
         </div>
     );
 }
@@ -83,7 +109,7 @@ const Table = (props) => {
         return eventList.map(item => {
             const { key, headline, subheadline, start_time } = item;
             // convert to pretty time using moment
-            const pretty_start_time = moment(start_time).format('MMMM Do YYYY, h:mm a');
+            const pretty_start_time = moment(start_time).format('MMMM Do YYYY, h:mm');
             return (
                 <tr key={key}>
                     <td>{key}</td>
@@ -107,5 +133,13 @@ const Table = (props) => {
                 {populateTable(props.eventList)}
             </tbody>
         </table>
+    );
+}
+
+const ErrorMessage = (props) => {
+    return (
+        <div>
+            <h3>{props.error}</h3>
+        </div>
     );
 }

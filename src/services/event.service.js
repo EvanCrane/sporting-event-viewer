@@ -9,6 +9,12 @@ export default class EventService {
      * @returns Promise resolving to [] or null
      */
     async fetchEventData(stateAssocKey, dateFrom, dateTo, size) {
+        // In case a dev later tried to pass nulls
+        stateAssocKey = stateAssocKey ? stateAssocKey : '';
+        dateFrom = dateFrom ? dateFrom : '';
+        dateTo = dateTo ? dateTo : '';
+        size = size !== null || undefined ? size : '';
+
         try {
             let baseUrl = 'https://challenge.nfhsnetwork.com/v2/search/events/upcoming';
             baseUrl += `?state_association_key=${stateAssocKey}&from=${dateFrom}&to=${dateTo}&size=${size}`;
